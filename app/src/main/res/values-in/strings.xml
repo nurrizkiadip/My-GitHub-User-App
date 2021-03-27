@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplikasi Pengguna GitHub Saya</string>
+    <string name="name_user">Nama Penggung</string>
+    <string name="github_users_app">Aplikasi Pengguna GitHub</string>
+    <string name="menu_search">Cari</string>
+    <string name="searh_hint">Cari Pengguna</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tab_text_1">Pengikut</string>
+    <string name="tab_text_2">Mengikuti</string>
+    <string name="repository_detail">Repositori</string>
+    <string name="followings_detail">Mengikuti</string>
+    <string name="followers_detail">Pengikut</string>
+    <string name="no_user_found">Pengguna tidak ditemukan</string>
+    <string name="company_user">Perusahaan Pengguna</string>
+    <string name="location_user">Lokasi Pengguna</string>
+    <string name="dummy_number">0</string>
+    <string name="action_change_language">Ubah Bahasa</string>
+</resources>

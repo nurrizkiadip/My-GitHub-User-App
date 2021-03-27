@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="img_avatar_detail" type="id"/>
+    <item name="tv_user_name_detail" type="id"/>
+    <item name="tv_user_company_detail" type="id"/>
+    <item name="tl_user_detail" type="id"/>
+    <item name="jumbotron_user_detail" type="id"/>
+    <item name="vp_user_detail" type="id"/>
+</resources>

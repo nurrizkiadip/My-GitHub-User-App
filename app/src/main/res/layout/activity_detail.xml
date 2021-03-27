@@ -1,155 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    >
 
-    <ImageView
-        android:id="@+id/circleImageView"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Avatar User" />
-    <TextView
-        android:id="@+id/tv_name_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/raleway_bold"
-        android:text="@string/name_user"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-        app:layout_constraintStart_toStartOf="@+id/circleImageView"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+        android:fitsSystemWindows="false">
 
-    <TextView
-        android:id="@+id/tv_company_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:fontFamily="@font/raleway_light"
-        android:text="@string/company_user"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_name_detail"
-        app:layout_constraintStart_toStartOf="@+id/tv_name_detail"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_detail" />
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/jumbotron_user_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary_dark"
+            android:fitsSystemWindows="true"
+            app:expandedTitleGravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-    <TableLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_avatar_detail"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="28dp"
+                    android:src="@drawable/user_placeholder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_user_name_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/name_user"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/img_avatar_detail"
+                    app:layout_constraintStart_toStartOf="@+id/img_avatar_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/img_avatar_detail" />
+
+                <TextView
+                    android:id="@+id/tv_user_location_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/location_user"
+                    android:textColor="#ddd"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_user_name_detail"
+                    app:layout_constraintStart_toStartOf="@+id/tv_user_name_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_name_detail" />
+
+                <TextView
+                    android:id="@+id/tv_user_company_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/company_user"
+                    android:textColor="#ddd"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_user_location_detail"
+                    app:layout_constraintStart_toStartOf="@+id/tv_user_location_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_location_detail" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user_company_detail">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/followers_detail"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_number_followers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dummy_number"
+                                android:textColor="#333" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+                            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/followings_detail"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_number_followings"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dummy_number"
+                                android:textColor="#333" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="32dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/repository_detail"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_number_repository"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dummy_number"
+                                android:textColor="#333" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_user_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jumbotron_user_detail"
+            app:tabTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_user_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_company_detail"
-        android:layout_margin="20dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="3dp"
-            >
-
-            <TextView
-                style="@style/UserDetail.Table"
-                android:drawablePadding="4dp"
-                tools:text="Username"
-                android:textStyle="italic"
-                app:drawableStartCompat="@drawable/ic_baseline_person_24" />
-
-            <TextView
-                android:id="@+id/tv_username"
-                style="@style/UserDetail.Table"
-                tools:text="Username User"
-                android:layout_weight="1"/>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_marginBottom="3dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                style="@style/UserDetail.Table"
-                android:drawablePadding="4dp"
-                tools:text="Location"
-                android:textStyle="italic"
-                app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
-
-            <TextView
-                android:id="@+id/tv_location"
-                style="@style/UserDetail.Table"
-                tools:text="Location User"
-                android:layout_weight="1"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_marginBottom="3dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                style="@style/UserDetail.Table"
-                android:drawablePadding="4dp"
-                tools:text="Repository"
-                android:textStyle="italic"
-                app:drawableStartCompat="@drawable/ic_baseline_collections_bookmark_24" />
-
-            <TextView
-                android:id="@+id/tv_repository"
-                style="@style/UserDetail.Table"
-                tools:text="Repository User"
-                android:layout_weight="1"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_marginBottom="3dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                style="@style/UserDetail.Table"
-                android:drawablePadding="4dp"
-                tools:text="Followers"
-                android:textStyle="italic"
-                app:drawableStartCompat="@drawable/ic_baseline_people_24" />
-
-            <TextView
-                android:id="@+id/tv_followers"
-                style="@style/UserDetail.Table"
-                tools:text="Followers User"
-                android:layout_weight="1"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="3dp">
-
-            <TextView
-                style="@style/UserDetail.Table"
-                android:drawablePadding="4dp"
-                tools:text="Following"
-                android:textStyle="italic"
-                app:drawableStartCompat="@drawable/ic_baseline_people_outline_24" />
-
-            <TextView
-                android:id="@+id/tv_following"
-                style="@style/UserDetail.Table"
-                tools:text="Following User"
-                android:layout_weight="1"/>
-        </TableRow>
-    </TableLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        app:layout_behavior=
+            "com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
