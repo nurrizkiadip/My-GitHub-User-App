@@ -101,12 +101,12 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     override fun onQueryTextChange(newText: String): Boolean {
         showLoading(true)
         showNotFound(false)
+        homeUserViewModel.getSearchUser(this@MainActivity, newText)
         if(newText.isEmpty()) {
             userAdapter.setDataUser(arrayListOf())
 //            showNotFound(false)
         }
 
-        homeUserViewModel.getSearchUser(this@MainActivity, newText)
         return false
     }
 

@@ -24,6 +24,8 @@ class UserDetailViewModel: ViewModel() {
         // sebaiknya dipindahkan ke dalam berkas build.gradle
         private const val TOKEN_GITHUB = "fbf919c6fef2ff33ce88767033ab0779132b5742"
 
+
+
     }
 
     fun getDetailUser(context: Context, username: String?){
